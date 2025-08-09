@@ -1,12 +1,12 @@
 class QuizQuestion {
-  QuizQuestion(this.text, this.answers);
+  QuizQuestion(this.questionText, this.answerChoices);
 
-  final String text;
-  final List<String> answers;
+  final String questionText;
+  final List<String> answerChoices;
 
   List<String> getShuffledAnswers() {
-    final List<String> shuffledAnswers = answers.toList();
-    answers.shuffle();
+    final List<String> shuffledAnswers = answerChoices.toList();
+    shuffledAnswers.shuffle();
     return shuffledAnswers;
   }
 }

@@ -23,6 +23,13 @@ class _QuizState extends State<Quiz> {
     });
   }
 
+  void restartQuiz() {
+    setState(() {
+      selectedAnswers = [];
+      activeScreen = 'questions-screen';
+    });
+  }
+
   void chooseAnswer(String answer) {
     selectedAnswers.add(answer);
 
@@ -54,6 +61,7 @@ class _QuizState extends State<Quiz> {
               ? QuestionsScreen(onSelectAnswer: chooseAnswer)
               : ResultsScreen(
                   chosenAnswers: selectedAnswers,
+                  restartQuiz: restartQuiz,
                 ),
         ),
       ),
